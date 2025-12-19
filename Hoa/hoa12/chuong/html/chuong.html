@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Học - H&T STUDY</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../../../../dang-nhap/js/auth.js"></script>
+    <script>
+      if (typeof requireAuth === "function") {
+        requireAuth();
+      } else {
+        console.error("requireAuth chưa được định nghĩa – kiểm tra lại đường dẫn auth.js");
+      }
+    </script>
+</head>
+<body>
+
+<header class="header">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+
+        <a href="../../../../trang_chu/html/index.html">Trang chủ</a>
+
+        <div class="sidebar-section">
+            <span class="sidebar-title">Toán</span>
+            <a href="../../../../Toan/toan10/html/Toan10.html" data-need-login>Toán 10</a>
+            <a href="../../../../Toan/toan11/html/Toan11.html" data-need-login>Toán 11</a>
+            <a href="../../../../Toan/toan12/html/Toan12.html" data-need-login>Toán 12</a>
+        </div>
+
+        <div class="sidebar-section">
+            <span class="sidebar-title">Hóa</span>
+            <a href="../../../hoa10/html/Hoa10.html" data-need-login>Hóa 10</a>
+            <a href="../../../hoa11/html/Hoa11.html" data-need-login>Hóa 11</a>
+            <a href="../../../hoa12/html/Hoa12.html" data-need-login>Hóa 12</a>
+        </div>
+
+        <a href="../../../../dang-nhap/html/login.html" id="auth-button-sidebar">Đăng nhập</a>
+    </nav>
+
+    <div class="logo-title">
+        <img src="../../../../hinh_anh/logo.png" alt="H&T STUDY Logo">
+        <span class="site-title">H&T STUDY</span>
+    </div>
+
+    <nav class="top-nav">
+        <ul>
+            <li><a href="../../../../trang_chu/html/index.html">Trang chủ</a></li>
+
+            <li class="dropdown">
+                <a href="#">Toán</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../../../../Toan/toan10/html/Toan10.html" data-need-login>Toán 10</a></li>
+                    <li><a href="../../../../Toan/toan11/html/Toan11.html" data-need-login>Toán 11</a></li>
+                    <li><a href="../../../../Toan/toan12/html/Toan12.html" data-need-login>Toán 12</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="active">Hóa</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../../../hoa10/html/Hoa10.html" data-need-login>Hóa 10</a></li>
+                    <li><a href="../../../hoa11/html/Hoa11.html" data-need-login>Hóa 11</a></li>
+                    <li><a href="../../../hoa12/html/Hoa12.html" data-need-login>Hóa 12</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="user-menu">
+        <button class="avatar-btn" id="avatar-btn">HS</button>
+        <div class="user-dropdown" id="user-dropdown">
+            <div class="user-dropdown-inner">
+                <div class="user-label">Học sinh</div>
+                <div class="user-name" id="user-name-display">Chưa đăng nhập</div>
+                <div class="user-code" id="user-code-display">Mã học sinh: ---</div>
+                <hr>
+                <button class="user-dropdown-link" id="btn-my-courses">Khóa học của tôi</button>
+                <button class="user-dropdown-link" id="btn-guide">Hướng dẫn</button>
+                <button class="user-dropdown-link" id="btn-change-avatar">Đổi avatar</button>
+                <button class="user-dropdown-link user-auth-btn" id="user-auth-btn">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+    <input type="file" id="avatar-file" accept="image/*" style="display:none">
+    <div id="avatar-alert" style="display:none;"></div>
+</header>
+<main class="lesson-page">
+
+    <!-- VIDEO -->
+    <section class="lesson-video">
+        <div class="video-wrapper">
+            <video controls preload="metadata">
+                <source src="../video/chuong1-bai1.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+
+        <div class="lesson-title">
+            <h1 id="lessonTitle">Chương 1 – Bài 1: Ester</h1>
+            <p>Hóa 12 • Nền tảng</p>
+        </div>
+    </section>
+    <!-- TABS -->
+    <section class="lesson-tabs">
+
+        <div class="tabs-header">
+            <button class="tab-btn active" data-tab="outline">Mục lục khóa học</button>
+            <button class="tab-btn" data-tab="docs">Tài liệu</button>
+        </div>
+
+        <div class="tabs-body">
+
+            <!-- ===== MỤC LỤC ===== -->
+    <div class="tab-content active" id="outline">
+
+    <div class="course">
+
+        <!-- KHÓA -->
+        <div class="course-header">
+            Nền tảng
+        </div>
+
+        <div class="course-body">
+
+            <!-- CHƯƠNG -->
+            <div class="chapter">
+
+                <div class="chapter-header">
+                    Chương 1: ESTER - LIPID
+                </div>
+                <div class="lesson-list">
+
+                    <!-- BÀI 1 -->
+                    <div class="lesson-item active"
+                         data-key="hoa12-c1-b1"
+                         data-chapter="Chương 1"
+                         data-title="Bài 1: Ester"
+                         data-video="../video/chuong1-bai1.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Ester","file":"../pdf/chuong1-bai1.pdf"},
+                            {"name":"Bài tập tự luyện","file":"../pdf/bt-tuduyen.pdf"}
+                         ]'>
+                        ▶ Bài 1: Ester
+                    </div>
+
+                    <!-- BÀI 2 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c1-b2"
+                         data-chapter="Chương 1"
+                         data-title="Bài 2: Lipid - Chất béo"
+                         data-video="../video/chuong1-bai2.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Lipid - Chất béo","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 2: Lipid - Chất béo
+                    </div>
+                    
+                    <!-- BÀI 3 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c1-b3"
+                         data-chapter="Chương 1"
+                         data-title="Bài 3: Xà phòng - Chất giặt rửa"
+                         data-video="../video/chuong1-bai3.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Xà phòng - Chất giặt rửa","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 3: Xà phòng - Chất giặt rửa
+                    </div>
+                </div>
+            </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 2: HỢP CHẤT CARBOHYDRATE
+                </div>
+                        <div class="lesson-list">
+                                        <!-- BÀI 4 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c2-b4"
+                         data-chapter="Chương 2"
+                         data-title="Bài 4: Tổng quát về Carbohydrate"
+                         data-video="../video/chuong2-bai4.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Tổng quát về Carbohydrate","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 4: Tổng quát về Carbohydrate
+                    </div>
+
+                                                            <!-- BÀI 5 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c2-b5"
+                         data-chapter="Chương 2"
+                         data-title="Bài 5: Glucose - Fructose"
+                         data-video="../video/chuong2-bai5.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Glucose - Fructose","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 5: Glucose - Fructose
+                    </div>
+
+                                                            <!-- BÀI 6 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c2-b6"
+                         data-chapter="Chương 2"
+                         data-title="Bài 6: Saccharose - Maltose"
+                         data-video="../video/chuong2-bai6.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Saccharose - Maltose","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 6: Saccharose - Maltose
+                    </div>
+
+                                                            <!-- BÀI 7 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c2-b7"
+                         data-chapter="Chương 2"
+                         data-title="Bài 7: Tinh Bột - Cellulose"
+                         data-video="../video/chuong2-bai7.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Tinh Bột - Cellulose","file":"../pdf/chuong1-bai2.pdf"}
+                         ]'>
+                        ▶ Bài 7: Tinh Bột - Cellulose
+                    </div>
+                    </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 3: HỢP CHẤT CHỨA NITROGEN
+                </div>
+                        <div class="lesson-list"> 
+                        <!-- BÀI 8 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c3-b8"
+                         data-chapter="Chương 3"
+                         data-title="Bài 8: Amine"
+                         data-video="../video/chuong3-bai8.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Amine","file":"../pdf/chuong3-bai8.pdf"}
+                         ]'>
+                        ▶ Bài 8: Amine
+                        </div>
+                    <!-- BÀI 9 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c3-b9"
+                         data-chapter="Chương 3"
+                         data-title="Bài 9: Amino Acid"
+                         data-video="../video/chuong3-bai9.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Amino Acid","file":"../pdf/chuong3-bai9.pdf"}
+                         ]'>
+                        ▶ Bài 9: Amino Acid
+                        </div>
+                            <!-- BÀI 10 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c3-b10"
+                         data-chapter="Chương 3"
+                         data-title="Bài 10: Peptide & Protein & Enzyme"
+                         data-video="../video/chuong3-bai10.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Peptide & Protein & Enzyme","file":"../pdf/chuong3-bai8.pdf"}
+                         ]'>
+                        ▶ Bài 10: Peptide & Protein & Enzyme
+                        </div>
+                    </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 4: POLYMER
+                </div>
+                        <div class="lesson-list"> 
+                    <!-- BÀI 11 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c4-b11"
+                         data-chapter="Chương 4"
+                         data-title="Bài 11: Đại cương về Polymer"
+                         data-video="../video/chuong4-bai11.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Đại cương về Polymer","file":"../pdf/chuong4-bai11.pdf"}
+                         ]'>
+                        ▶ Bài 11: Đại cương về Polymer
+                        </div>
+                    <!-- BÀI 12 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c4-b12"
+                         data-chapter="Chương 4"
+                         data-title="Bài 12: Vật liệu Polymer"
+                         data-video="../video/chuong4-bai12.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Vật liệu Polymer","file":"../pdf/chuong4-bai12.pdf"}
+                         ]'>
+                        ▶ Bài 12: Vật liệu Polymer
+                        </div>
+                        </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 5: PIN ĐIỆN VÀ ĐIỆN PHÂN
+                </div>
+                        <div class="lesson-list"> 
+                    <!-- BÀI 13 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c5-b13"
+                         data-chapter="Chương 5"
+                         data-title="Bài 13: Pin Điện"
+                         data-video="../video/chuong5-bai13.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Pin Điện","file":"../pdf/chuong5-bai13.pdf"}
+                         ]'>
+                        ▶ Bài 13: Pin Điện
+                        </div>
+                            <!-- BÀI 14 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c5-b14"
+                         data-chapter="Chương 5"
+                         data-title="Bài 14: Điện Phân"
+                         data-video="../video/chuong5-bai14.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Điện Phân","file":"../pdf/chuong5-bai14.pdf"}
+                         ]'>
+                        ▶ Bài 14: Điện Phân
+                        </div>
+                        </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 6: ĐẠI CƯƠNG VỀ KIM LOẠI
+                </div>
+                        <div class="lesson-list"> 
+                    <!-- BÀI 15 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c6-b15"
+                         data-chapter="Chương 6"
+                         data-title="Bài 15: Kim Loại"
+                         data-video="../video/chuong6-bai15.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Kim Loại","file":"../pdf/chuong6-bai15.pdf"}
+                         ]'>
+                        ▶ Bài 15: Kim Loại
+                        </div>
+                        </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 7: NGUYÊN TỐ NHÓM IA & NGUYÊN TỐ NHÓM IIA
+                </div>
+                        <div class="lesson-list"> 
+                    <!-- BÀI 16 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c7-b16"
+                         data-chapter="Chương 7"
+                         data-title="Bài 16: Nguyên tố nhóm IA"
+                         data-video="../video/chuong7-bai16.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Nguyên tố nhóm IA","file":"../pdf/chuong7-bai16.pdf"}
+                         ]'>
+                        ▶ Bài 16: Nguyên tố nhóm IA
+                        </div>
+                        <!-- BÀI 17 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c7-b17"
+                         data-chapter="Chương 7"
+                         data-title="Bài 17: Nguyên tố nhóm IIA"
+                         data-video="../video/chuong7-bai17.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Nguyên tố nhóm IIA","file":"../pdf/chuong7-bai17.pdf"}
+                         ]'>
+                        ▶ Bài 17: Nguyên tố nhóm IIA
+                        </div>
+                            <!-- BÀI 18 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c7-b18"
+                         data-chapter="Chương 7"
+                         data-title="Bài 18: Nước cứng"
+                         data-video="../video/chuong7-bai18.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Nước cứng","file":"../pdf/chuong7-bai18.pdf"}
+                         ]'>
+                        ▶ Bài 18: Nước cứng
+                        </div>
+                        </div>
+                    </div>
+                    <div class="chapter">
+                    <div class="chapter-header">
+                    Chương 8: SƠ LƯỢT VỀ KIM LOẠI CHUYỂN TIẾP DÃY THỨ NHẤT & PHỨC CHẤT
+                </div>
+                        <div class="lesson-list"> 
+                         <!-- BÀI 19 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c8-b19"
+                         data-chapter="Chương 8"
+                         data-title="Bài 19: Kim loại chuyển tiếp dãy thứ nhất"
+                         data-video="../video/chuong8-bai19.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Kim loại chuyển tiếp dãy thứ nhất","file":"../pdf/chuong8-bai19.pdf"}
+                         ]'>
+                        ▶ Bài 19: Kim loại chuyển tiếp dãy thứ nhất
+                        </div>
+                            <!-- BÀI 20 -->
+                    <div class="lesson-item"
+                         data-key="hoa12-c8-b20"
+                         data-chapter="Chương 8"
+                         data-title="Bài 20: Phức chất"
+                         data-video="../video/chuong8-bai20.mp4"
+                         data-docs='[
+                            {"name":"Tài liệu Phức chất","file":"../pdf/chuong8-bai20.pdf"}
+                         ]'>
+                        ▶ Bài 20: Phức chất
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+            <!-- ===== TÀI LIỆU ===== -->
+            <div id="docs" class="tab-content">
+
+    <div class="doc-list" id="docList">
+        <!-- JS tự đổ tài liệu -->
+    </div>
+
+</div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 H&T STUDY</p>
+</footer>
+<script>
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    if (!sidebar) return;
+    sidebar.classList.toggle("open");
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ======================
+       BIẾN DOM
+    ====================== */
+    const video = document.querySelector("video");
+    const titleEl = document.getElementById("lessonTitle");
+    const docList = document.getElementById("docList");
+    const lessons = document.querySelectorAll(".lesson-item");
+function getLessonFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("lesson");
+    if (!key) return null;
+
+    return [...lessons].find(
+        lesson => lesson.dataset.key === key
+    );
+}
+
+    /* ======================
+       LOAD BÀI HỌC
+    ====================== */
+    function loadLesson(lesson) {
+        if (!lesson) return;
+
+        // video
+        if (lesson.dataset.video) {
+            video.src = lesson.dataset.video;
+            video.load();
+        }
+
+        // title
+        titleEl.textContent =
+            `${lesson.dataset.chapter} – ${lesson.dataset.title}`;
+
+        // docs
+        docList.innerHTML = "";
+        const docs = JSON.parse(lesson.dataset.docs || "[]");
+        docs.forEach(d => {
+            const a = document.createElement("a");
+            a.href = d.file;
+            a.textContent = "📄 " + d.name;
+            a.className = "doc-item";
+            a.download = "";
+            docList.appendChild(a);
+        });
+
+        // active lesson
+        lessons.forEach(l => l.classList.remove("active"));
+        lesson.classList.add("active");
+
+        // mở chương
+        document.querySelectorAll(".chapter")
+            .forEach(c => c.classList.remove("open"));
+        lesson.closest(".chapter")?.classList.add("open");
+    }
+
+    /* ======================
+       CLICK BÀI HỌC
+    ====================== */
+   lessons.forEach(lesson => {
+    lesson.addEventListener("click", () => {
+        history.replaceState(
+            null,
+            "",
+            "?lesson=" + lesson.dataset.key
+        );
+        loadLesson(lesson);
+    });
+});
+
+    /* ======================
+       LOAD BÀI ĐẦU TIÊN
+    ====================== */
+    const fromURL = getLessonFromURL();
+
+loadLesson(
+    fromURL
+    || document.querySelector(".lesson-item.active")
+    || lessons[0]
+);
+
+    /* ======================
+       TAB
+    ====================== */
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const tab = btn.dataset.tab;
+
+            document.querySelectorAll(".tab-btn")
+                .forEach(b => b.classList.remove("active"));
+            document.querySelectorAll(".tab-content")
+                .forEach(c => c.classList.remove("active"));
+
+            btn.classList.add("active");
+            document.getElementById(tab)?.classList.add("active");
+        });
+    });
+/* ======================
+   BUNG / ĐÓNG KHÓA (NỀN TẢNG)
+====================== */
+document.querySelectorAll(".course-header").forEach(header => {
+    header.addEventListener("click", () => {
+        header.parentElement.classList.toggle("open");
+    });
+});
+
+    /* ======================
+       BUNG / ĐÓNG CHƯƠNG
+    ====================== */
+    document.querySelectorAll(".chapter-header").forEach(header => {
+        header.addEventListener("click", () => {
+            header.parentElement.classList.toggle("open");
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
